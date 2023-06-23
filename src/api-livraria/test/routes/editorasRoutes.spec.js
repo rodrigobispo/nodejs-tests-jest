@@ -40,6 +40,28 @@ describe('POST em /editoras', () => {
 
     idEditoraGravada = resposta.body.content.id;
   });
+
+  it('deve adicionar nada ao passar o body vazio', async () => {
+    await request(app).post('/editoras').send({}).expect(400);
+  });
+});
+
+describe('PUT em /editoras/id', () => {
+  it('deve alterar o campo nome', async () => {
+    await request(app).put(`/editoras/${idEditoraGravada}`)
+      .send({ nome: 'Panini' })
+      .expect(204);
+  });
+
+  test.each([
+    { nome: 'Alta Books' },
+    { cidade: 'SP' },
+    { email: 'altabooks@altab.com' },
+  ])('deve alterar cada campo: %s', async (campo) => {
+    await request(app).put(`/editoras/${idEditoraGravada}`)
+      .send(campo)
+      .expect(204);
+  });
 });
 
 describe('DELETE em /editoras/id', () => {
