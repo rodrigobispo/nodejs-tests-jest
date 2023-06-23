@@ -14,3 +14,17 @@ describe('Testes dos itens', () => {
     expect(item.pegaValorTotalItem()).toBeCloseTo(0.9);
   });
 });
+
+describe('Inicializando itens', () => {
+  test.each([
+    ['uva', 3.40, 4],
+    ['maçã', 2.50, 1],
+    ['laranja', 3.10, 2],
+  ])('deve adicionar frutas no carrinho, item %s', async (nome, valor, quantidade) => {
+    const item = new Item(nome, valor, quantidade);
+
+    expect(item.nome).toBe(nome);
+    expect(item.valor).toBe(valor);
+    expect(item.quantidade).toBe(quantidade);
+  });
+});
