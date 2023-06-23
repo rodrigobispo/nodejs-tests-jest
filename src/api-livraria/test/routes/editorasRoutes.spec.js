@@ -1,4 +1,10 @@
 import request from 'supertest';
+import {
+  describe,
+  it,
+  test,
+  jest,
+} from '@jest/globals';
 import app from "../../app.js";
 
 let server;
@@ -6,6 +12,7 @@ let server;
 beforeEach(() => {
   const port = 3000;
   server = app.listen(port);
+  jest.restoreAllMocks();
 });
 
 afterEach(() => {
@@ -58,9 +65,14 @@ describe('PUT em /editoras/id', () => {
     { cidade: 'SP' },
     { email: 'altabooks@altab.com' },
   ])('deve alterar cada campo: %s', async (campo) => {
-    await request(app).put(`/editoras/${idEditoraGravada}`)
+    const requisicao = { request };
+    const spy = jest.spyOn(requisicao, 'request');
+
+    await requisicao.request(app).put(`/editoras/${idEditoraGravada}`)
       .send(campo)
       .expect(204);
+
+    expect(spy).toHaveBeenCalled(); // verificando se a função está sendo chamada
   });
 });
 
