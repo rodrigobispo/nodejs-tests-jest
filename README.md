@@ -11,10 +11,10 @@ Livraria com sistema de cadastro e manejo de livros, autores e editoras.
 
 ## Stack utilizada
 
-* `Node.js` v16.14.2
-* `express` v4.18.1,
-* `knex` v2.1.0
-* `sqlite3` v5.0.8
+* `Node.js` v18.12.0
+* `express` v4.18.2,
+* `knex` v2.4.2
+* `sqlite3` v5.1.6
 
 
 ## Instalação
@@ -34,7 +34,8 @@ Este projeto já conta com o código necessário para subir a API em um servidor
 │   │   └── editorasController.js
 │   ├── db
 │   │   ├── dbconfig.js
-│   │   └── livraria.sqlite
+│   │   ├── database.livraria.sqlite
+│   │   └── populate.sql
 │   ├── models
 │   │   └── livro.js
 │   │   └── autor.js
