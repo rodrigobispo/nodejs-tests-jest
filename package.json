@@ -1,13 +1,14 @@
 {
   "name": "jest",
   "version": "1.0.0",
-  "description": "",
+  "description": "API de livraria com Node.js e com cobertura de testes",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose",
     "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --verbose --watch",
-    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --coverage"
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --coverage",
+    "test:auth:service": "node --experimental-vm-modules node_modules/jest/bin/jest.js --testPathPattern=src/api-livraria/test/services/authService.spec.js"
   },
   "keywords": [],
   "author": "",
@@ -24,8 +25,12 @@
   "type": "module",
   "dependencies": {
     "@jest/globals": "^29.5.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
     "knex": "^2.4.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.2",
     "sqlite": "^4.2.1",
     "sqlite3": "^5.1.6"
   }
