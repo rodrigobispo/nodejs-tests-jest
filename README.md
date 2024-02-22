@@ -57,7 +57,7 @@ Este projeto já conta com o código necessário para subir a API em um servidor
 
 Este projeto utiliza o SQLite como gerenciador de banco de dados SQL. O SQLite utiliza um arquivo, normalmente de extensão `.sqlite` ou `.db`, para guardar os dados.
 
-O projeto já conta com uma base de dados configurada e populada com alguns dados iniciais, localizado na pasta `src/db/livraria.sqlite`. Para utilizar estes dados é necessário ter os drivers do SQLite instalados localmente no computador; você pode seguir os passos abaixo para instalar e acessar os dados:
+O projeto já conta com uma base de dados configurada e populada com alguns dados iniciais, localizado na pasta `src/api-livraria/db/database.livraria.sqlite`. Para utilizar estes dados é necessário ter os drivers do SQLite instalados localmente no computador; você pode seguir os passos abaixo para instalar e acessar os dados:
 
 * Instalar o `sqlite` globalmente no computador:
   `sudo apt update`
@@ -66,8 +66,8 @@ O projeto já conta com uma base de dados configurada e populada com alguns dado
 * Verifique a instalação com:
   `sqlite3 --version`
 
-* Utilize o cli do SQLite para acessar o arquivo `src/db/livraria.sqlite` e fazer consultas via terminal:
-  `sqlite3 ./src/db/livraria.sqlite`. O terminal deverá exibir a seguinte mensagem (a data e hora do acesso serão as locais do momento em que você acessar):
+* Utilize o cli do SQLite para acessar o arquivo `src/api-livraria/db/database.livraria.sqlite` e fazer consultas via terminal:
+  `sqlite3 ./src/api-livraria/db/database.livraria.sqlite`. O terminal deverá exibir a seguinte mensagem (a data e hora do acesso serão as locais do momento em que você acessar):
   ```
   SQLite version 3.31.1 2020-01-27 19:55:54
   Enter ".help" for usage hints.
@@ -78,7 +78,7 @@ O projeto já conta com uma base de dados configurada e populada com alguns dado
 
 Este projeto utiliza o SQLite como gerenciador de banco de dados SQL. O SQLite utiliza um arquivo, normalmente de extensão `.sqlite` ou `.db`, para guardar os dados.
 
-O projeto já conta com uma base de dados configurada e populada com alguns dados iniciais, localizado na pasta `src/db/livraria.sqlite`. Para utilizar estes dados é necessário ter os drivers do SQLite instalados localmente no computador; você pode seguir os passos abaixo para instalar e acessar os dados:
+O projeto já conta com uma base de dados configurada e populada com alguns dados iniciais, localizado na pasta `src/api-livraria/db/database.livraria.sqlite`. Para utilizar estes dados é necessário ter os drivers do SQLite instalados localmente no computador; você pode seguir os passos abaixo para instalar e acessar os dados:
 
 * Instalar o `sqlite` globalmente no computador:
   `sudo apt update`
@@ -110,8 +110,8 @@ Depois execute o cmd como administrador e rode o comando ```sqlite3```
 * Verifique a instalação com:
   `sqlite3 --version`
 
-* Utilize o cli do SQLite para acessar o arquivo `src/db/livraria.sqlite` e fazer consultas via terminal:
-  `sqlite3 ./src/db/livraria.sqlite`. O terminal deverá exibir a seguinte mensagem (a data e hora do acesso serão as locais do momento em que você acessar):
+* Utilize o cli do SQLite para acessar o arquivo `src/api-livraria/db/database.livraria.sqlite` e fazer consultas via terminal:
+  `sqlite3 ./src/api-livraria/db/database.livraria.sqlite`. O terminal deverá exibir a seguinte mensagem (a data e hora do acesso serão as locais do momento em que você acessar):
   ```
   SQLite version 3.31.1 2020-01-27 19:55:54
   Enter ".help" for usage hints.
@@ -137,8 +137,8 @@ Depois execute o cmd como administrador e rode o comando ```sqlite3```
 
 Você pode utilizar o CLI do SQLite para fazer consultas ao banco e conferir se os dados iniciais estão retornando.
 
-* Utilize o cli do SQLite para acessar o arquivo `src/db/livraria.sqlite`:
-  `sqlite3 ./src/db/livraria.sqlite`
+* Utilize o cli do SQLite para acessar o arquivo `src/api-livraria/db/database.livraria.sqlite`:
+  `sqlite3 ./src/api-livraria/db/database.livraria.sqlite`
 
 * Digite `.tables` para exibir as tabelas já criadas no banco:
   ```

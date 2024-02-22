@@ -14,19 +14,19 @@ class AuthService {
       }
 
       if (!data.senha) {
-        throw new Error('A senha de usuario é obrigatório.');
+        throw new Error('A senha de usuário é obrigatória!');
       }
 
       const usuario = await Usuario.pegarPeloEmail(data.email);
 
       if (!usuario) {
-        throw new Error('Usuario não cadastrado.');
+        throw new Error('Usuário não cadastrado.');
       }
 
       const senhaIguais = await bcryptjs.compare(data.senha, usuario.senha);
 
       if (!senhaIguais) {
-        throw new Error('Usuario ou senha invalido.');
+        throw new Error('Usuário ou senha inválida.');
       }
 
       const accessToken = jsonwebtoken.sign({
@@ -36,7 +36,7 @@ class AuthService {
         expiresIn: 86400,
       });
 
-      return { message: 'Usuario conectado', accessToken };
+      return { message: 'Usuário conectado', accessToken };
     } catch (err) {
       throw new Error(err.message);
     }
