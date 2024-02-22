@@ -10,7 +10,8 @@
     "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --coverage",
     "test:auth:service": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --testPathPattern=src/api-livraria/test/services/authService.spec.js",
     "test:auth:router": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=/api-livraria/test/routes/authRoutes.spec.js",
-    "test:db": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=/api-livraria/test/db/dbConfig.spec.js"
+    "test:db": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=/api-livraria/test/db/dbConfig.spec.js",
+    "test:imagem:service": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=/api-livraria/test/services/livrosImagensService.spec.js"
   },
   "keywords": [],
   "author": "",

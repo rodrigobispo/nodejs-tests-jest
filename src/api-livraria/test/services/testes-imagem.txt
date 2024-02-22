@@ -1,0 +1,4 @@
+1. É obrigatório informar o id do livro a qual a imagem é vinculada
+2. O sistema só permite imagens do tipo PNG e JPG
+3. O sistema só permite imagens até 5000kb
+4. O sistema deve salvar uma imagem vinculada ao livro caso todos os dados estejam corretos
