@@ -1,4 +1,4 @@
-CREATE TABLE autores(
+CREATE TABLE IF NOT EXISTS autores(
   id            INTEGER NOT NULL PRIMARY KEY,
   nome          TEXT    NOT NULL,
   nacionalidade TEXT    NOT NULL,
@@ -6,12 +6,7 @@ CREATE TABLE autores(
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO autores (nome, nacionalidade)
-VALUES  ("JRR Tolkien", "sul-africano"),
-        ("Ursula LeGuin", "estadunidense"),
-        ("Machado de Assis", "brasileira");
-
-CREATE TABLE editoras(
+CREATE TABLE IF NOT EXISTS editoras(
   id      INTEGER NOT NULL PRIMARY KEY,
   nome    TEXT    NOT NULL,
   cidade  TEXT    NOT NULL,
@@ -20,13 +15,7 @@ CREATE TABLE editoras(
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO editoras (nome, cidade, email)
-VALUES  ("Europa-América", "Lisboa", "e@e.com"),
-        ("Morro Branco", "São Paulo", "m@m.com"),
-        ("Aleph", "São Paulo", "al@al.com"),
-        ("Ateliê", "São Paulo", "a@a.com");
-
-CREATE TABLE livros(
+CREATE TABLE IF NOT EXISTS livros(
   id          INTEGER NOT NULL PRIMARY KEY,
   titulo      TEXT    NOT NULL,
   paginas     INTEGER NOT NULL,
@@ -38,11 +27,34 @@ CREATE TABLE livros(
   FOREIGN KEY (autor_id) REFERENCES autores (id)
 );
 
-INSERT INTO livros (titulo, paginas, autor_id, editora_id)
-VALUES
-   ("O Hobbit", 230, 1, 1),
-   ("O Silmarillion", 400, 1, 1),
-   ("O Silmarillion", 400, 1, 1),
-   ("O Feiticeiro de Terramar", 450, 2, 2),
-   ("Os Despossuídos", 300, 2, 3),
-   ("Memórias Póstumas de Brás Cubas", 150, 3, 4);
+CREATE TABLE IF NOT EXISTS aluguel_livro (
+  id              INTEGER NOT NULL PRIMARY KEY,
+  livro_id        INTEGER NOT NULL,
+  usuario_id      INTEGER NOT NULL,
+  dias_alugados   INTEGER NOT NULL,
+  alugado         BOOLEAN NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (livro_id) REFERENCES livros (id)
+  FOREIGN KEY (usuario_id) REFERENCES usuarios (id)
+);
+
+CREATE TABLE IF NOT EXISTS livros_imagens (
+  id          INTEGER NOT NULL PRIMARY KEY,
+  livro_id    INTEGER NOT NULL,
+  mimetype    TEXT NOT NULL,
+  filename    TEXT NOT NULL,
+  size        INTEGER NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, base64 TEXT,
+  FOREIGN KEY (livro_id) REFERENCES livros (id)
+);
+
+CREATE TABLE IF NOT EXISTS usuarios(
+  id      INTEGER NOT NULL PRIMARY KEY,
+  nome    TEXT    NOT NULL,
+  email   TEXT    NOT NULL,
+  senha   TEXT    NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

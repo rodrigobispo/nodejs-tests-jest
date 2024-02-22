@@ -44,15 +44,29 @@ class AuthService {
 
   async cadastrarUsuario(data) {
     try {
+      if (!data.nome) {
+        throw new Error('O nome de usuário é obrigatório!');
+      }
+
+      if (!data.email) {
+        throw new Error('O email de usuário é obrigatório!');
+      }
+
       if (!data.senha) {
         throw new Error('A senha de usuário é obrigatória!');
       }
+
+      const usuarioExistente = await Usuario.pegarPeloEmail(data.email);
+      if (usuarioExistente) {
+        throw new Error('O email já esta cadastrado!');
+      }
+
       data.senha = await bcryptjs.hash(data.senha, 8);
 
       const usuario = new Usuario(data);
 
-      const resposta = await usuario.salvar(usuario);
-      return { message: 'usuario criado', content: resposta };
+      const usuarioSalvo = await usuario.salvar(usuario);
+      return { message: 'usuário criado', content: usuarioSalvo };
     } catch (err) {
       throw new Error(err.message);
     }
