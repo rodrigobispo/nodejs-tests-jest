@@ -11,7 +11,8 @@
     "test:auth:service": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --testPathPattern=src/api-livraria/test/services/authService.spec.js",
     "test:auth:router": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=/api-livraria/test/routes/authRoutes.spec.js",
     "test:db": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=/api-livraria/test/db/dbConfig.spec.js",
-    "test:imagem:service": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=/api-livraria/test/services/livrosImagensService.spec.js"
+    "test:imagem:service": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=/api-livraria/test/services/livrosImagensService.spec.js",
+    "test:email": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=src/api-livraria/test/config/disparoEmail.spec.js"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +30,7 @@
   "dependencies": {
     "@jest/globals": "^29.5.0",
     "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "knex": "^3.1.0",
