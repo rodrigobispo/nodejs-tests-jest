@@ -12,7 +12,8 @@
     "test:auth:router": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=/api-livraria/test/routes/authRoutes.spec.js",
     "test:db": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=/api-livraria/test/db/dbConfig.spec.js",
     "test:imagem:service": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=/api-livraria/test/services/livrosImagensService.spec.js",
-    "test:email": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=src/api-livraria/test/config/disparoEmail.spec.js"
+    "test:email": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=src/api-livraria/test/config/disparoEmail.spec.js",
+    "test:aluguel:service": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --passWithNoTests --testPathPattern=src/api-livraria/test/services/aluguelLivroService.spec.js"
   },
   "keywords": [],
   "author": "",
